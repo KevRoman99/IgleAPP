@@ -1,3 +1,21 @@
 .form-control.login-user {
     border: 0 solid #fff !important;
   }
+  .btn-social{
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    border-color: rgba(0, 0, 0, 0.2);
+  }
+  .btn-facebook{
+    text-align: center;
+    background: #3b5998;
+    
+  }
+  .btn-google{
+    text-align: center;
+    background: #dd4b39;
+  }

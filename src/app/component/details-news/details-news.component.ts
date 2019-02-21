@@ -1,3 +1,5 @@
+import { noticiasInterface } from './../../models/noticias';
+import { DataApiService } from './../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsNewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dataApi: DataApiService) { }
+  public news: noticiasInterface;
+
 
   ngOnInit() {
+    //const idNews = 'kZ00bp6IKEQTJCVvN6xB';
+    /*this.dataApi.getOneNoticia(idNews).subscribe( news =>{
+      console.log(news);
+    });*/
   }
 
 }
