@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
 
 import {noticiasInterface} from '../models/noticias'
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs/internal/Observable';
 import { Action } from 'rxjs/internal/scheduler/Action';
 
 @Injectable({
@@ -31,7 +31,7 @@ export class DataApiService {
       });
     }));
   }
-  getOneNoticia(idNews){
+  getOneNoticia(idNews: string){
     this.noticiaDoc = this.afs.doc<noticiasInterface>(`news/${idNews}`);
     return this.noticia = this.noticiaDoc.snapshotChanges().pipe(map(action =>{
       if(action.payload.exists == false){
@@ -43,7 +43,16 @@ export class DataApiService {
       }
     }));
   }
-  addNoticias(){}
-  updateNoticias(){}
-  deleteNoticias(){}
+  addNoticias(news : noticiasInterface):void{
+    this.noticiasCollection.add(news);
+  }
+  updateNoticias(news: noticiasInterface):void{
+    let idNews = news.id;
+    this.noticiaDoc = this.afs.doc<noticiasInterface>(`news/${idNews}`);
+    this.noticiaDoc.update(news);
+  }
+  deleteNoticias(idNews: String):void{
+    this.noticiaDoc = this.afs.doc<noticiasInterface>(`news/${idNews}`);
+    this.noticiaDoc.delete();
+  }
 }

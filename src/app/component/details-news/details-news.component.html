@@ -1,4 +1,4 @@
-<section id="books">
+<section id="news" class="mt-5">
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
@@ -6,13 +6,13 @@
           <div class="card">
             <div class="card-body text-center">
               <p>
-                <img class="img-fluid" src="{{book.portada}}" alt="{{book.titulo}}">
+                <img class="img-fluid" src="{{news.photoUrl}}" alt="{{news.titulo}}">
               </p>
-              <h4 routerLink="/book/{{book.id}}" class="card-title">{{book.titulo}}</h4>
+              <h4 routerLink="/news/{{news.id}}" class="card-title">{{news.titulo}}</h4>
               <p class="card-text">
-                {{book.descripcion}}
+                {{news.descripcion}}
               </p>
-              <a href="{{book.link_amazon}}" class="btn btn-block btn-primary" target="_blank">Buy</a>
+              <!-- <a href="{{book.link_amazon}}" class="btn btn-block btn-primary" target="_blank">Buy</a> -->
             </div>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { auth } from 'firebase';
 export class NavbarComponent implements OnInit {
 
   constructor(private authService: AuthService, private afsAuth: AngularFireAuth) { }
-  public app_name: string = "San Lucas";
+  public app_name: string = "Pack Meat";
   public isLogged: boolean = false;
 
   ngOnInit() {

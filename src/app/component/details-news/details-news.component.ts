@@ -1,6 +1,7 @@
 import { noticiasInterface } from './../../models/noticias';
 import { DataApiService } from './../../services/data-api.service';
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute, Params} from '@angular/router';
 
 @Component({
   selector: 'app-details-news',
@@ -9,15 +10,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsNewsComponent implements OnInit {
 
-  constructor(private dataApi: DataApiService) { }
-  public news: noticiasInterface;
+  constructor(private dataApi: DataApiService, private route: ActivatedRoute) { }
+  public news: noticiasInterface = {};
 
 
   ngOnInit() {
-    //const idNews = 'kZ00bp6IKEQTJCVvN6xB';
-    /*this.dataApi.getOneNoticia(idNews).subscribe( news =>{
-      console.log(news);
-    });*/
+  const idNews = this.route.snapshot.params['id'];
+  this.getDetaills(idNews);
+    
   }
-
+  getDetaills(idNews: string): void{
+    this.dataApi.getOneNoticia(idNews).subscribe( news =>{
+      // console.log('Detail news', news);
+      this.news = news;
+    });
+  }
 }

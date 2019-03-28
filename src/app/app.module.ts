@@ -21,7 +21,8 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/da
 
 import {AngularFireStorageModule} from '@angular/fire/storage';
 import {AngularFirestore} from '@angular/fire/firestore';
-import { AngularFireAuth } from '@angular/fire/auth'; 
+import { AngularFireAuth } from '@angular/fire/auth';
+import { ModalComponent } from './component/modal/modal.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import { AngularFireAuth } from '@angular/fire/auth';
     HomeComponent,
     Page404Component,
     HeroComponent,
-    DetailsNewsComponent
+    DetailsNewsComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
