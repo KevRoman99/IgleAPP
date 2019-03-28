@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class ListNewsComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
-  private news: noticiasInterface = {};
+  private news: noticiasInterface[] = [];
   ngOnInit() {
     this.getListNews();
   }
