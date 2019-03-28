@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
   templateUrl: './list-news.component.html',
   styleUrls: ['./list-news.component.css']
 })
+
 export class ListNewsComponent implements OnInit {
 
   constructor(private dataApi: DataApiService) { }
@@ -18,11 +19,10 @@ export class ListNewsComponent implements OnInit {
   }
   getListNews(){
     this.dataApi.getAllNoticias().subscribe(news => {
-      this.news = news
+      this.news = news;
     });
   }
   onDeleteNews(){
     console.log('Delete ');
   }
-  
 }
